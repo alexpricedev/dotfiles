@@ -73,7 +73,7 @@ create_symlink() {
 DOTFILES=(
     "$HOME/.bashrc:.bashrc"
     "$HOME/.vimrc:.vimrc"
-    # "$HOME/.tmux.conf:.tmux.conf"
+    "$HOME/.tmux.conf:.tmux.conf"
 )
 
 log_info "Starting symlink process..."
