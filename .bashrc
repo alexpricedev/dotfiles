@@ -1,7 +1,7 @@
 # ----------------- Setup -----------------
 
 # Bash prompt
-PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[96;3m\]\w\n\[\e[0;95m\]>\[\e[0m\] '
+PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[97m\]\w\n\[\e[0;95m\]>\[\e[0m\] '
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
