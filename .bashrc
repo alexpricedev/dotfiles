@@ -57,3 +57,7 @@ alias p="cd ~/projects"
 alias l="ls -lF"
 alias la="ls -laF"
 alias ll="la"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
