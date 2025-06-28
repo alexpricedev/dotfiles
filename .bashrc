@@ -1,7 +1,6 @@
 # ----------------- Setup -----------------
 
-# Bash prompt
-PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[97m\]\w\n\[\e[0;95m\]>\[\e[0m\] '
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[97m\]\w\n\[\e[0;95m\][${PS1_CMD1}]>\[\e[0m\] '
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
