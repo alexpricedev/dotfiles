@@ -74,6 +74,7 @@ DOTFILES=(
     "$HOME/.bashrc:.bashrc"
     "$HOME/.vimrc:.vimrc"
     "$HOME/.tmux.conf:.tmux.conf"
+    "$HOME/projects/CLAUDE.md:CLAUDE.md"
 )
 
 log_info "Starting symlink process..."
