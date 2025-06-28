@@ -21,3 +21,8 @@ Just run `bash symlink.sh` to make it run.
 Then run `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` to install the tmux package manager.
 
 When inside a new (or resourced) tmux session do `ctrl-b + I` to install the plugins.
+
+## MCP
+
+Claude Code commands:
+* `claude mcp add puppeteer -s project -- npx -y @modelcontextprotocol/server-puppeteer`
