@@ -15,7 +15,7 @@ This file provides guidance to all Claude Code (claude.ai/code) instances when w
 - Once the plan is complete, create a new git branch
 - Work the issue
 - Once the work is complete, lint the code, track all changes, commit and push that branch
-- Once the branch is pushed, create a new PR referencing the issue worked. If the branch is based off of another branch, make sure the PR's base branch is set to that branch and not `main`
+- Once the branch is pushed, create a new PR referencing the issue worked. If the branch is based off of another branch, make sure the PR's base branch is set to *that branch* and *not* `main`. Also write a list of tests based off of the requirements from the original issue ticket that I should run manually to confirm the work is complete
 
 ### Key Points
 
