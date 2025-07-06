@@ -16,20 +16,23 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Ignore case during tab completion
-bind "set completion-ignore-case on"
+# Configure readline settings (only in interactive shells)
+if [[ $- == *i* ]] && command -v bind &> /dev/null; then
+    # Ignore case during tab completion
+    bind "set completion-ignore-case on"
 
-# Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
+    # Treat hyphens and underscores as equivalent
+    bind "set completion-map-case on"
 
-# Display all matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
+    # Display all matches for ambiguous patterns at first tab press
+    bind "set show-all-if-ambiguous on"
 
-# Show all matches when multiple possible completions exist
-bind "set show-all-if-unmodified on"
+    # Show all matches when multiple possible completions exist
+    bind "set show-all-if-unmodified on"
 
-# Add trailing slash when completing symlinks to directories
-bind "set mark-symlinked-directories on"
+    # Add trailing slash when completing symlinks to directories
+    bind "set mark-symlinked-directories on"
+fi
 
 
 
