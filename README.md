@@ -25,5 +25,5 @@ When inside a new (or resourced) tmux session do `ctrl-b + I` to install the plu
 ## MCP
 
 Claude Code commands:
-* `claude mcp add playwright npx '@playwright/mcp@latest'`
+* `claude mcp add playwright npx '@playwright/mcp@latest -s user'`
 * `claude mcp add instant -s user -t http https://mcp.instantdb.com/mcp`
