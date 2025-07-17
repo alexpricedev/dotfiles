@@ -16,8 +16,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Configure readline settings (only in interactive shells)
-if [[ $- == *i* ]] && command -v bind &> /dev/null; then
+# Configure readline settings (only in interactive shells with line editing enabled)
+if [[ $- == *i* ]] && command -v bind &> /dev/null && (set -o | grep -q "emacs.*on\|vi.*on"); then
     # Ignore case during tab completion
     bind "set completion-ignore-case on"
 
