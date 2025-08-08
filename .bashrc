@@ -1,12 +1,8 @@
 # ----------------- Setup -----------------
-
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[97m\]\w\n\[\e[0;95m\][${PS1_CMD1}]>\[\e[0m\] '
 
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-
-
-
+export PATH="$HOME/bin:$PATH"
 
 # ----------------- Completion features -----------------
 
@@ -34,19 +30,13 @@ if [[ $- == *i* ]] && command -v bind &> /dev/null && (set -o | grep -q "emacs.*
     bind "set mark-symlinked-directories on"
 fi
 
-
-
-
 # ----------------- Misc. -----------------
 
 # Disable silly macos zsh warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Don’t clear the screen after quitting a manual page.
-export MANPAGER='less -X';
-
-
-
+export MANPAGER='less -X'
 
 # ----------------- Alias -----------------
 
@@ -60,9 +50,6 @@ alias l="ls -lF"
 alias la="ls -laF"
 alias ll="la"
 
-
-
-
 # ----------------- Runtimes -----------------
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -70,7 +57,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Only load brew if it's available
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
 if command -v brew &> /dev/null; then
     eval "$(brew shellenv)"
 fi 
@@ -78,3 +67,10 @@ fi
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# pnpm
+export PNPM_HOME="/Users/alexprice/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
