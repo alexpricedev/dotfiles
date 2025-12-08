@@ -1,3 +1,5 @@
 [user]
 	email = github@alexprice.dev
 	name = Alex Price
+[push]
+	autoSetupRemote = true
