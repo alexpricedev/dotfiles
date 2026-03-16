@@ -6,3 +6,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 export PATH=$PATH:$HOME/.maestro/bin
+
+# Entire CLI shell completion
+if command -v entire &> /dev/null; then
+    source <(entire completion bash)
+fi
