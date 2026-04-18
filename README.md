@@ -29,6 +29,19 @@ chsh -s /opt/homebrew/bin/bash
 echo $SHELL && bash --version
 ```
 
+## Keyboard
+
+Speed up key repeat below the System Settings minimums:
+
+```sh
+# Key repeat rate (lower = faster, GUI min is 2)
+defaults write NSGlobalDomain KeyRepeat -int 1
+# Delay until repeat (lower = shorter, GUI min is 15)
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+```
+
+Log out and back in for the change to take effect.
+
 ## Setup
 
 There is a script (`symlink.sh`) to link the dotfiles to the right place on disk.
