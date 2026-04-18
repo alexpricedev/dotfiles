@@ -12,6 +12,23 @@ This version focuses on IoT and Raspberry Pi compatibility, optimized for lightw
 - **bash** - Shell configuration and aliases  
 - **vim** - Text editor setup and plugins
 
+## Bash
+
+macOS ships with an old version of bash. Install and switch to the latest:
+
+```sh
+# 1. Install latest bash
+brew install bash
+# 2. Check version (should be 5.x)
+/opt/homebrew/bin/bash --version
+# 3. Add the new bash to the list of allowed shells
+echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
+# 4. Change your default shell
+chsh -s /opt/homebrew/bin/bash
+# 5. Verify after opening a new terminal window
+echo $SHELL && bash --version
+```
+
 ## Setup
 
 There is a script (`symlink.sh`) to link the dotfiles to the right place on disk.
