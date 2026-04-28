@@ -1,4 +1,9 @@
 # ----------------- Setup -----------------
+
+# Ensure HOME is set — some launchers (e.g. Conductor) invoke bash with
+# HOME unset/empty, which silently breaks every $HOME-derived PATH below.
+[ -z "$HOME" ] && export HOME="/Users/$(id -un 2>/dev/null || whoami)"
+
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[92m\]\u\[\e[0m\]@\[\e[93m\]\h\[\e[0m\]: \[\e[97m\]\w\n\[\e[0;95m\][${PS1_CMD1}]>\[\e[0m\] '
 
 # Add `~/bin` and `~/.local/bin` to the `$PATH`
@@ -56,8 +61,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 # Only load brew if it's available
 export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
@@ -78,3 +83,4 @@ esac
 
 # Maestro (Mobile E2E tests)
 export PATH="$PATH:$HOME/.maestro/bin"
+eval "$(/opt/homebrew/bin/brew shellenv)"

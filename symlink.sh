@@ -72,9 +72,12 @@ create_symlink() {
 # Format: "target_path:source_file_in_dotfiles_dir"
 DOTFILES=(
     "$HOME/.bashrc:.bashrc"
+    "$HOME/.bash_profile:.bash_profile"
+    "$HOME/.zshenv:.zshenv"
     "$HOME/.vimrc:.vimrc"
     "$HOME/.tmux.conf:.tmux.conf"
-    "$HOME/.claude/CLAUDE.md:.claude/CLAUDE.md"
+    "$HOME/.config/kitty/kitty.conf:kitty.conf"
+    "$HOME/.config/kitty/current-theme.conf:current-theme.conf"
 )
 
 log_info "Starting symlink process..."
